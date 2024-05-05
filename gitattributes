@@ -1,2 +1,3 @@
 .c linguist-detachable=true
+.html linguist-detachable=false
 
