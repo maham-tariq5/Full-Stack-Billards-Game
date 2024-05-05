@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Game Setup</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#gameForm").submit(function(event) {
+          event.preventDefault();
+          
+          var formData = {
+            player1: $("#player1_name").val(),
+            player2: $("#player2_name").val()
+          };
+
+          $.ajax({
+            url: "/start-game",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(formData),
+            success: function(response) {
+              console.log("Game started successfully.");
+              window.location.href = "index.html"; // Redirect to the game interface
+            },
+            error: function(xhr, status, error) {
+              console.error("Error starting game:", error);
+            }
+          });
+        });
+      });
+    </script>
+</head>
+<body>
+    <form id="gameForm">
+        <h2>Start Pool Game</h2>
+        <label for="player1_name">Player 1 Name:</label>
+        <input type="text" id="player1_name" name="player1_name" required />
+        <br><br>
+        <label for="player2_name">Player 2 Name:</label>
+        <input type="text" id="player2_name" name="player2_name" required />
+        <br><br>
+        <input type="submit" value="Start Game" />
+    </form>
+</body>
+</html>

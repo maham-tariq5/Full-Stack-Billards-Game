@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Game Menu</title>
+    <script>
+        function startGame() {
+            const player1 = document.getElementById('player1').value;
+            const player2 = document.getElementById('player2').value;
+
+            // Using fetch to POST data
+            fetch('/start-game', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `player1=${encodeURIComponent(player1)}&player2=${encodeURIComponent(player2)}`
+            })
+            .then(response => {
+                if (response.redirected) {
+                    window.location.href = response.url;
+                }
+            })
+            .catch(error => console.error('Error starting game:', error));
+        }
+    </script>
+</head>
+<body>
+    <h2>Start Pool Game</h2>
+    <label for="player1">Player 1 Name:</label>
+    <input type="text" id="player1" name="player1">
+    <br><br>
+    <label for="player2">Player 2 Name:</label>
+    <input type="text" id="player2" name="player2">
+    <br><br>
+    <button onclick="startGame()">Start Game</button>
+</body>
+</html>

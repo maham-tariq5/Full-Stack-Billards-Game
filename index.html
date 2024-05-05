@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maham's Billards Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js">
+    </script>
+
+
+    <script>
+      $(document).ready(function() {
+      function mouse_display_tracker(listener) {
+          $('#valx').remove();
+          $('#valy').remove();
+          $('<div id="valx">'+listener.pageX+'</div>').appendTo("#x");
+          $('<div id="valy">'+listener.pageY+'</div>').appendTo("#y");
+      }
+
+        $('svg').mousemove(mouse_display_tracker);
+
+      
+    });
+
+      
+
+
+    </script>
+    <script src="shotLogic.js"></script>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: lightpink; 
+        }
+        #svg_box svg {
+            border: 1px solid #000;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+        }
+        .control-panel {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #player-form {
+            margin-bottom: 20px;
+        }
+        #page-title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+
+
+
+
+
+  </head>
+  <body>
+    
+
+    <div id="svg_box">
+      <svg width="700" height="1375" viewBox="-25 -25 1400 2750"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+              <clipPath id="tableClip">
+                  <rect width="1350" height="2700" x="0" y="0"/>
+              </clipPath>
+            </defs>
+            <rect width="1350" height="2700" x="0" y="0" fill="#C0D0C0" /> 
+            <rect width="1400" height="25" x="-25" y="-25" fill="darkgreen" />
+            <rect width="1400" height="25" x="-25" y="2700" fill="darkgreen"/>
+            <rect width="25" height="2750" x="-25" y="-25" fill="darkgreen" />
+            <rect width="25" height="2750" x="1350" y="-25" fill="darkgreen" />
+            <circle cx="0" cy="0" r="114" fill="black" clip-path="url(#tableClip)"/>
+            <circle cx="0" cy="1350" r="114" fill="black" clip-path="url(#tableClip)"/>
+            <circle cx="0" cy="2700" r="114" fill="black" clip-path="url(#tableClip)"/>
+            <circle cx="1350" cy="0" r="114" fill="black" clip-path="url(#tableClip)"/>
+            <circle cx="1350" cy="1350" r="114" fill="black" clip-path="url(#tableClip)"/>
+            <circle cx="1350" cy="2700" r="114" fill="black" clip-path="url(#tableClip)"/>
+        
+            <circle cx="553" cy="674" r="28" fill="SANDYBROWN" />
+            <circle cx="615" cy="674" r="28" fill="LIGHTGREEN" />
+            <circle cx="675" cy="674" r="28" fill="LIGHTSALMON" />
+            <circle cx="737" cy="676" r="28" fill="MEDIUMPURPLE" />
+            <circle cx="795" cy="673" r="28" fill="PINK" />
+            <circle cx="765" cy="726" r="28" fill="LIGHTBLUE" />
+            <circle cx="704" cy="726" r="28" fill="LIGHTYELLOW" />
+            <circle cx="644" cy="729" r="28" fill="BLACK" />
+            <circle cx="584" cy="728" r="28" fill="BROWN" />
+            <circle cx="612" cy="780" r="28" fill="GREEN" />
+            <circle cx="676" cy="779" r="28" fill="ORANGE" />
+            <circle cx="737" cy="779" r="28" fill="PURPLE" />
+            <circle cx="706" cy="832" r="28" fill="RED" />
+            <circle cx="645" cy="832" r="28" fill="BLUE" />
+            <circle cx="675" cy="885" r="28" fill="YELLOW" />
+            <circle cx="677" cy="2025" r="28" fill="WHITE" />
+
+
+            <line id="line" x1="0" y1="0" x2="0" y2="0" stroke="black" stroke-width="10" style="display: none;"></line>
+
+
+            <!-- <circle id="ball" cx="100" cy="1025" r="28" fill="WHITE" /> -->
+            </svg>
+
+      </div>
+
+      
+
+  </body>
+</html>
