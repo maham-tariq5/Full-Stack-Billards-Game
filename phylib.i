@@ -1,9 +1,9 @@
 /******************************************************************************/
 /* File:  phylib.i                                                            */
 /******************************************************************************/
-/* (C) Stefan C. Kremer, 2024                                                 */
-/* A swig file to interface Python with the phylib library used for CIS*2750, */
-/* Winter 2024.                                                               */
+/*                                                */
+/* A swig file to interface Python with the phylib library  */
+/*                                                               */
 /******************************************************************************/
 
 /* based on phylib.c and phylib.h */
